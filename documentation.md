@@ -13,8 +13,8 @@ age (optional): Filter persons by age.
 Response:
 Status: 200 OK
 Body (example):
-json
-Copy code
+
+
 [
 	{
 		"id": 2,
@@ -34,8 +34,8 @@ Endpoint: /api
 Method: POST
 Description: Create a new person record.
 Request Body:
-json
-Copy code
+
+
 {
   "name": "John Doe",
   "age": 30,
@@ -44,8 +44,8 @@ Copy code
 Response:
 Status: 201 Created
 Body (example):
-json
-Copy code
+
+
 {
   "message": "Person created successfully",
   "data": {
@@ -62,8 +62,8 @@ Description: Update an existing person record by providing its ID. You can also 
 Request Parameters:
 id: ID of the person to update.
 Request Body:
-json
-Copy code
+
+
 {
   "name": "Updated Name",
   "age": 35,
@@ -72,8 +72,8 @@ Copy code
 Response:
 Status: 200 OK
 Body (example):
-json
-Copy code
+
+
 {
   "message": "Person instance updated successfully",
   "data": {

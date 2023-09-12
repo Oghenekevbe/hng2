@@ -78,4 +78,3 @@ To delete a person, make a DELETE request to:
 http://localhost:8000/api/<user_id>
 Replace <user_id> with the ID of the person you want to delete.
 
-Contributing
