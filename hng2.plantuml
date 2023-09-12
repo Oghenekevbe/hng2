@@ -1,0 +1,30 @@
+@startuml hng2 
+
+class Person {
+  - id: int
+  - name: string
+  - age: int
+}
+
+class PersonSerializer {
+  + id: int
+  + name: string
+  + age: int
+}
+
+class api {
+  - serializer_class: PersonSerializer
+
+  + get(request, pk: int): Response
+  + post(request): Response
+  + put(request, pk: int): Response
+  + delete(request, pk: int): Response
+}
+
+Person --|> api : contains
+PersonSerializer --|> api : uses
+
+@enduml
+
+
+
