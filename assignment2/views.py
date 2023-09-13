@@ -10,21 +10,15 @@ from .serializers import PersonSerializer
 class api(APIView):
     serializer_class = PersonSerializer
 
-    def get(self, request, pk=None):
-            name = request.query_params.get('name', '')
-            age = request.query_params.get('age', '')
+    def get(self, request, pk=None, name = None):
             if pk is not None:
-                person = get_object_or_404(Person, pk=pk)
-                serializer = self.serializer_class(person)
-                return Response(data=serializer.data, status=status.HTTP_200_OK)
-            elif age:
-                persons = Person.objects.filter(age=age)
-                serializer = self.serializer_class(persons, many=True)
+                persons = get_object_or_404(Person, pk=pk)
+                serializer = self.serializer_class(persons)
                 return Response(data=serializer.data, status=status.HTTP_200_OK)
             
-            elif name:
-                persons = Person.objects.filter(name=name)
-                serializer = self.serializer_class(persons, many=True)
+            elif name is not None:
+                persons = get_object_or_404(Person, name=name)
+                serializer = self.serializer_class(persons)
                 return Response(data=serializer.data, status=status.HTTP_200_OK)
             else:
                 persons = Person.objects.all()
@@ -44,24 +38,15 @@ class api(APIView):
         else:
             return Response(data={'error': 'Person not created'}, status=status.HTTP_400_BAD_REQUEST)
 
-    def put(self, request, pk=None):
+    def put(self, request, pk=None, name= None):
         if request.method == 'PUT':
-            name = request.query_params.get('name', '')
-            age = request.query_params.get('age', '')
 
             if pk is not None:
+                persons = get_object_or_404(Person, pk=pk)
+            elif name is not None:
                 persons = get_object_or_404(Person, name=name)
-            elif name:
-                persons = Person.objects.filter(name=name).first()
-                if not persons:
-                    return Response(data={'error': 'Person not found'}, status=status.HTTP_404_NOT_FOUND)
-            elif age:
-                persons = Person.objects.filter(age=age)
-                if not age:
-                    return Response(data={'error': 'Person with {age} not available'}, status=status.HTTP_404_NOT_FOUND)
-                serializer = self.serializer_class(persons, many=True)
-                return Response(data=serializer.data, status=status.HTTP_200_OK)
-
+            else:
+                return Response(data={'error':'Person instance unavailabled'}, status=status.HTTP_400_BAD_REQUEST)
         
             data = request.data
             serializer = self.serializer_class(persons, data=request.data)
@@ -75,14 +60,11 @@ class api(APIView):
             else:
                 return Response(data={'error': 'Invalid data for updating person'}, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, pk=None):
-        name = request.query_params.get('name', '')
+    def delete(self, request, pk=None, name =None):
         if pk is not None:
             persons = get_object_or_404(Person, name=name)
-        elif name:
-            persons = Person.objects.filter(name=name).first()
-            if not persons:
-                return Response(data={'error': 'Person not found'}, status=status.HTTP_404_NOT_FOUND)
+        elif name is not None:
+            persons = get_object_or_404(Person, name=name)
 
 
         persons.delete()

@@ -42,18 +42,19 @@ To get a list of all persons, make a GET request to:
 
 
 http://localhost:8000/api
-You can also filter persons by name or age using query parameters:
 
+Get a Person
+Note that you can get a person either by id or by name
 
-
-http://localhost:8000/api/?name=John
-http://localhost:8000/api/?age=30
 Get a Person by ID
 To retrieve a person by their ID, make a GET request to:
 
+http://localhost:8000/api/user_id
 
+Get a Person by name
+To retrieve a person by their name, make a GET request to:
+http://localhost:8000/api/name
 
-http://localhost:8000/api
 Create a New Person
 To create a new person, make a POST request to:
 

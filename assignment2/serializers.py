@@ -4,9 +4,8 @@ from rest_framework import serializers
 
 class PersonSerializer(serializers.ModelSerializer):
     name =  serializers.CharField(max_length=50)
-    age =   serializers.IntegerField()
     bio =  serializers.CharField()
 
     class Meta:
         model = Person
-        fields = ['id','name', 'age', 'bio']
+        fields = ['id','name',  'bio']
