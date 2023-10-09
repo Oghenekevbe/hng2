@@ -5,8 +5,10 @@ Installation
 Clone this repository to your local machine.
 
 
+
 git clone <repository_url>
 Navigate to the project directory.
+
 
 
 cd django-person-api
@@ -15,8 +17,8 @@ Create a virtual environment (optional but recommended).
 
 python -m venv venv
 Activate the virtual environment.
-On Windows:
 
+On Windows:
 
 
 venv\Scripts\activate
@@ -33,7 +35,7 @@ Run the development server.
 
 
 python manage.py runserver
-The API will be available at http://localhost:8000/api
+The API will be available at http://localhost:8000/api.
 
 Usage
 Get a List of Persons
@@ -42,19 +44,21 @@ To get a list of all persons, make a GET request to:
 
 
 http://localhost:8000/api
-
 Get a Person
-Note that you can get a person either by id or by name
+Note that you can get a person either by id or by name.
 
 Get a Person by ID
 To retrieve a person by their ID, make a GET request to:
 
+
+
 http://localhost:8000/api/user_id
-
-Get a Person by name
+Get a Person by Name
 To retrieve a person by their name, make a GET request to:
-http://localhost:8000/api/name
 
+
+
+http://localhost:8000/api/name
 Create a New Person
 To create a new person, make a POST request to:
 
@@ -69,7 +73,7 @@ To update an existing person, make a PUT request to:
 
 
 http://localhost:8000/api/<user_id>
-Include the updated data in the request body in JSON format.
+Replace <user_id> with the ID of the person you want to update. Include the updated data in the request body in JSON format.
 
 Delete a Person
 To delete a person, make a DELETE request to:
@@ -78,4 +82,7 @@ To delete a person, make a DELETE request to:
 
 http://localhost:8000/api/<user_id>
 Replace <user_id> with the ID of the person you want to delete.
+
+
+
 
