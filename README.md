@@ -8,7 +8,10 @@ This is a simple Django REST API for managing person records. It allows you to p
 
 
 
-- git clone <repository_url>
+  '''sh
+
+  git clone <repository_url>
+'''
 - Navigate to the project directory.
 
 
@@ -16,8 +19,9 @@ This is a simple Django REST API for managing person records. It allows you to p
 - cd django-person-api
 - Create a virtual environment (optional but recommended).
 
-
->python -m venv venv
+'''sh
+python -m venv venv
+'''
 - Activate the virtual environment.
 
 **On Windows**:
