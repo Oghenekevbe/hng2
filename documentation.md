@@ -5,7 +5,7 @@ This API provides **CRUD (Create, Read, Update, Delete) operations** for managin
 To access the API, use the base URL: [https://your-domain.com/api/].
 
 ## Endpoints
-Get a Person
+**Get a Person**
 Request
 
 [URL: /api or /api/<str:name>]
@@ -68,7 +68,7 @@ name (required): The name of the person.
 bio (required): The biography or description of the person.
 Example
 
-Create a new person:
+**Create a new person**:
 
 
 
@@ -98,7 +98,7 @@ Example Response
 
 
 ```
-Update a Person
+**Update a Person**
 Request
 
 URL: /api/<str:name> or /api/<int:pk>
@@ -151,7 +151,7 @@ Example Response
 ```
 
 
-Delete a Person
+**Delete a Person**
 Request
 
 URL: /api/<str:name> or /api/<int:pk>
