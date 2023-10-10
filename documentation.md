@@ -75,7 +75,7 @@ Create a new person:
 POST https://your-domain.com/api/
 Content-Type: application/json
 
-``sh
+```sh
 {
   "name": "John Doe",
   "bio": "A software developer."
