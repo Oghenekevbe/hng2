@@ -147,7 +147,10 @@ Example Response
   "id": 1,
   "name": "John Doe",
   "bio": "An experienced software developer."
-}```
+}
+```
+
+
 Delete a Person
 Request
 
