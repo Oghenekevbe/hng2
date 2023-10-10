@@ -122,9 +122,10 @@ Content-Type: application/json
 {
   "bio": "An experienced software developer."
 }
+```
 Update a person by primary key (replace <pk> with the person's primary key):
 
-```
+
 
 PUT https://your-domain.com/api/<int:pk>
 Content-Type: application/json
@@ -136,7 +137,6 @@ Content-Type: application/json
 Response
 
 Status Code: 200 OK
-
 ```
 Body: A JSON object containing the updated person record.
 Example Response
@@ -147,9 +147,7 @@ Example Response
   "id": 1,
   "name": "John Doe",
   "bio": "An experienced software developer."
-}
-
-```
+}```
 Delete a Person
 Request
 
