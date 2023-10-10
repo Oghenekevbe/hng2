@@ -76,14 +76,14 @@ POST https://your-domain.com/api/
 Content-Type: application/json
 
 ``sh
-
 {
   "name": "John Doe",
   "bio": "A software developer."
 }
 Response
-```
+
 Status Code: 201 Created
+```
 Body: A JSON object containing the created person record.
 Example Response
 
