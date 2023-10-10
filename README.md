@@ -1,22 +1,24 @@
 #Django Person API
+
 This is a simple Django REST API for managing person records. It allows you to perform CRUD (Create, Read, Update, Delete) operations on person data.
 
 ##Installation
--Clone this repository to your local machine.
+
+- Clone this repository to your local machine.
 
 
 
--git clone <repository_url>
--Navigate to the project directory.
+- git clone <repository_url>
+- Navigate to the project directory.
 
 
 
--cd django-person-api
--Create a virtual environment (optional but recommended).
+- cd django-person-api
+- Create a virtual environment (optional but recommended).
 
 
 >python -m venv venv
--Activate the virtual environment.
+- Activate the virtual environment.
 
 On Windows:
 
