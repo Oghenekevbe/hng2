@@ -117,13 +117,14 @@ Update a person by name (replace <name> with the person's name):
 
 PUT https://your-domain.com/api/<str:name>
 Content-Type: application/json
+
 ```sh
 {
   "bio": "An experienced software developer."
 }
 Update a person by primary key (replace <pk> with the person's primary key):
 
-'''
+```
 
 PUT https://your-domain.com/api/<int:pk>
 Content-Type: application/json
