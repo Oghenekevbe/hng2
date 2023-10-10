@@ -9,9 +9,8 @@ This is a simple Django REST API for managing person records. It allows you to p
 
 
   '''sh
-
   git clone <repository_url>
-'''
+  '''
 - Navigate to the project directory.
 
 
