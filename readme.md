@@ -17,8 +17,8 @@ This project implements user authentication and organisation management using Dj
 
 **Clone the repository:**
    ```
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/my-hng-internship-projects/hng2.git
+   cd hng2
    ```
 **Create and activate a virtual environment**
 
@@ -67,9 +67,12 @@ DATABASE_PORT=your_database_port
 ```python manage.py runserver``` 
 
 ## API Endpoints
-User Registration
+User Registration 
+
 URL: /api/register/
+
 Method: POST
+
 Request Body:
 ```
 json
@@ -104,7 +107,9 @@ json
 User Login 
 
 URL: /api/login/
+
 Method: POST
+
 Request Body:
 
 ```
@@ -138,7 +143,9 @@ json
 User Details 
 
 URL: /api/users/<uuid_str>/
+
 Method: GET
+
 Headers:
  
 
@@ -170,7 +177,9 @@ json
 User Organisations 
 
 URL: /api/users/organisations/
+
 Method: GET
+
 Headers:
 ```
 json
@@ -203,7 +212,9 @@ json
 Create Organisation 
 
 URL: /api/organisations/
+
 Method: POST 
+
 
 Headers: 
 
