@@ -20,3 +20,7 @@ class OrganizationMembershipSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrganizationMembership
         fields = ['orgId', 'name', 'description']
+
+
+class AddUserToOrganisationSerializer(serializers.Serializer):
+    userId = serializers.UUIDField()

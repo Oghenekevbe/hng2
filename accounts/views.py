@@ -49,6 +49,7 @@ class RegisterView(generics.CreateAPIView):
     
 class LoginView(generics.CreateAPIView):
     serializer_class = LoginSerializer
+
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
@@ -56,19 +57,29 @@ class LoginView(generics.CreateAPIView):
         if user is not None:
             refresh = get_tokens_for_user(user)
             serializer = self.serializer_class(user)
+            # Store tokens in Django session
+            request.session['jwt_access_token'] = refresh['access']
+
+
             response_data = {
                 'status': 'success',
                 'message': 'Login successful',
                 'data': {
                     'accessToken': refresh['access'],
                     "user": {
-                                "userId": user.userId,
-                                "firstName": user.firstName,
-                                        "lastName": user.lastName,
-                                        "email": user.email,
-                                        "phone": user.phone,
-                            }
+                        "userId": user.userId,
+                        "firstName": user.firstName,
+                        "lastName": user.lastName,
+                        "email": user.email,
+                        "phone": user.phone,
+                    }
                 }
             }
-            return success_response(data=response_data)
-        return  authentication_failed()
+            #set cookies
+            response = success_response(data=response_data)
+            response.set_cookie(key='access_token', value=refresh['access'], httponly=True)
+            
+
+            return response
+        return authentication_failed()
+
