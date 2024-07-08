@@ -30,6 +30,9 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='', cast=Csv())
 
+# Ensure to include the current Vercel URL
+ALLOWED_HOSTS += [config('VERCEL_URL', default='')]
+
 # Application definition
 
 INSTALLED_APPS = [
